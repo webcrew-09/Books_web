@@ -1,0 +1,419 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5; /* Light Gray */
+    color: #333333; /* Dark Gray */
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS code */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #003366; /* Deep Blue */
+    padding: 10px;
+}
+
+.navbar .logo,
+.anchor,
+.navbar .search-container,
+.navbar .login-button {
+    margin: 0 10px; /* Apply margin to all navbar elements */
+}
+
+.login-button {
+    color: #FFD700; /* Soft Gold */
+    text-decoration: none;
+    padding: 14px 20px;
+    margin-left: auto; /* Push the login button to the right */
+}
+
+.login-button:hover {
+    background-color: #4169E1; /* Royal Blue */
+    color: white;
+}
+
+
+.navbar .logo {
+    color: #FFD700; /* Soft Gold */
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.btn{
+    color: #4169E1;
+    background-color: #FFD700;
+    width: 110px;
+    height: 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+    display: flex;
+    margin-left: 100px;
+    margin-right: 20px;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 23px #FFD700;
+}
+
+.btn a{
+    padding-left: 30px;
+    padding-top:13px ;
+    font-weight: 600;
+    font-size: medium;
+    color: #4169E1;
+    text-decoration: none;
+}
+
+#about{
+    height: 918px;
+    width: 100%;
+    background-color: var(--second-bgcolor);
+    color: var(--text-color);
+    display: flex;
+}
+
+.search-box{
+    width: 400px;
+}
+
+.big{
+    font-size: larger;
+}
+
+.about-link {
+    margin-left: 20px; /* Adjust this value as needed */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push the search container to the far right */
+}
+
+.search-container input[type="text"] {
+    padding: 6px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    background-color: #FFD700; /* Soft Gold */
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+h2{
+    color: black;
+    margin-left: 54px;
+}
+
+
+
+.search-container button:hover {
+    background-color: #4169E1; /* Royal Blue */
+    color: white;
+}
+
+.search-container input{
+    height: 35px;
+}
+
+
+
+/* CSS code */
+.login-button {
+    color: #FFD700; /* Soft Gold */
+    text-decoration: none;
+    padding: 14px 20px;
+    margin-left: auto; /* Push the login button to the right */
+}
+
+.login-button:hover {
+    background-color: #4169E1; /* Royal Blue */
+    color: white;
+}
+
+
+.quote-image {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.quote-image img {
+    width: 100%;
+    height: auto;
+}
+
+.quote-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+.popular-books {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.popular-books h2 {
+    margin-top: 0;
+}
+
+.book-list {
+    display: flex;
+}
+
+.book {
+    margin-right: 20px;
+}
+
+.book img {
+    width: 150px; /* Adjust the width of the book cover */
+    height: 200px; /* Adjust the height of the book cover */
+    background-color: #000; /* Black cover */
+}
+
+.big{
+    font-size: 1.3rem;
+}
+
+.book h3 {
+    text-align: center;
+}
+
+.popular-books {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    background: whitesmoke;
+    background-size: contain;
+    background-position: center;
+    margin: 20px;
+    border-radius: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    
+}
+
+.searchicon{
+    border-radius: 0px;
+    margin-left: -20px;
+    border-top-left-radius: 0px;
+}
+
+.search-container{
+    width: 800px;
+}
+
+.popular-books h2 {
+    margin-top: 0;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid with minimum column width of 200px */
+    grid-gap: 250px; /* Gap between grid items */
+    justify-content: space-between; /* Distribute items evenly across the row */
+}
+
+
+.book {
+    text-align: center;
+}
+
+.cover {
+    width: 150px; /* Width of the book cover */
+    height: 200px; /* Height of the book cover */
+    background-color: #f0f0f0; /* Light gray background for the cover */
+    border: 1px solid #ccc; /* Border around the cover */
+    border-radius: 5px; /* Rounded corners for the cover */
+    margin: 0 auto 10px; /* Margin to separate cover from title */
+}
+
+h3 {
+    margin: 0; /* Remove default margin for the title */
+}
+
+
+.footer {
+    background-color: #003366; /* Deep Blue */
+    color: #FFFFFF; /* White */
+    padding: 50px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info,
+.contact-info,
+.branch-info {
+    flex: 1;
+    margin-right: 20px; /* Add some space between sections */
+}
+
+.footer-info h3,
+.contact-info h3,
+.branch-info h3 {
+    margin-bottom: 15px;
+}
+
+.footer-info p,
+.contact-info p,
+.branch-info p {
+    margin: 8px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px; /* Add some space between content and bottom */
+}
+
+.book-grid h3{
+    color: #4169E1;
+    text-decoration: none;
+}
+
+.button{
+    display: flex;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+.logo h2{
+    color: #FFD700;
+}
+
+.responsivenav{
+    color: #FFD700;
+    background-color: #003366;
+    height: 500px;
+    width: 100%;
+    display: grid;
+    grid-gap: 25px;
+    display: none;
+}
+
+.responsivenav {
+    display: none;
+    transition: display 0.5s ; /* Add transition effect */
+  }
+  
+  .responsivenav.show {
+    display: grid;
+    transition: display 0.5s; /* Add transition effect */
+  }
+
+.responsive_a{
+    text-decoration: none;
+    color: #FFD700;
+    font-size: larger;
+    font-weight:350 ;
+    padding-left: 42%;
+    text-shadow: 0px 0px 13px #FFD700;
+}
+
+@media only screen and (max-width:900px){
+    body{
+        width: 100%;
+    }
+
+    .search-container input[type="text"] {
+        height: 18px;
+        width: 90px;
+        margin-left: 0;
+    }
+    
+    .search-container button {
+        padding: 6px 10px;
+        margin: 0px;
+        width: 55px;
+        height: 30px;
+        background-color: #FFD700; /* Soft Gold */
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    
+    .quote-text{
+        font-size: 20px;
+    }
+
+    .book-grid{
+        grid-gap: 200px;
+    }
+
+    .checkbtn{
+        display: block;
+        margin-left: 20px;
+    }
+
+    .navbar .logo{
+        margin-right: 5px;
+        margin-left: 8px;
+    }
+
+    .logo h2{
+        font-size: 15px;
+        margin-left: 0;
+        margin-right: 10px;
+        color: #FFD700;
+    }
+    
+    .anchor{
+        display: none;
+    }
+    .btn{
+        display: none;
+    }
+    #check:checked .responsivenav {
+        display: grid;
+    }
+
+    .footer h3{
+        font-size: 17px;
+        padding-left: 14px;
+    }
+
+    .footer p{
+        font-size: 13px;
+        padding-left: 14px;
+    }
+}
+

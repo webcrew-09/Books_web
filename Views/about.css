@@ -1,0 +1,101 @@
+body {
+    background-color: #f7f7f7; 
+    font-family: 'Montserrat', sans-serif; 
+  }
+  
+  .about-page {
+    max-width: 850px;
+    height: 100%;
+    margin: 0 auto; 
+    padding: 30px;
+    background-color: #fff; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .description {
+    font-size: 18px;
+    color: #999;
+  }
+  
+  .golden-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700; /* Golden color */
+  }
+  
+  .call-to-action {
+    background-color: #FFD700; /* Golden color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    background-color: #FFD700; /* Golden color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #FFC107; /* Darker golden color */
+  }
+
+  .heading{
+    color: #4169E1;
+  }
+
+  .aboutheading{
+    font-size: 7vmin;
+    color: #003366;
+   }
+
+  .aboutdiv{
+    text-align: center;
+  }
+
+  span{
+    color: #4169E1;
+  }
+
+  .btn {
+    color: #FFD700;
+    background-color: #4169E1;
+    width: 110px;
+    height: 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .btn a {
+    text-decoration: none;
+    color: #FFD700;
+    padding: 0; /* Remove padding */
+  }
+  
+  .btn:hover {
+    box-shadow: 0px 0px 23px #4169E1;
+  }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sign Up</h2>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        id="name"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        id="email"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Your Password"
+        id="pass"
+        required
+      />
+      <button id="signbtn" class="btn">Sign Up</button>
+    </div>
+
+    <script>
+      const generator = document.querySelector("#signbtn");
+      generator.addEventListener("click", () => {
+        console.log("clicked!");
+        const username = document.querySelector("#name").value;
+        const email = document.querySelector("#email").value;
+        const password = document.querySelector("#pass").value;
+        
+        if (!username || !email || !password) {
+          alert("One or more fields cannot be empty.");
+          return; // Exit the function early
+        }
+        
+        fetch("/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, email, password }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert(data.message); // Display success message
+            // Optionally, redirect to the login page or perform other actions
+          } else {
+            alert(data.message); // Display error message
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred'); // Display generic error message
+        });
+        
+        document.querySelector("#name").value = "";
+        document.querySelector("#email").value = "";
+        document.querySelector("#pass").value = "";
+      });
+    </script>
+    
+    
+  </body>
+</html>

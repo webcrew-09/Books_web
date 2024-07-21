@@ -1,0 +1,150 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vmin;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/479/101/113/germany-saxony-gorlitz-hall-historical-literature-wallpaper-preview.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper{
+    background: transparent;
+    border:1.5px solid grey;
+    color: whitesmoke;
+    width: 350px;
+    border-radius: 15px;
+    padding: 30px 40px;
+    backdrop-filter: blur(11px);
+}
+
+.wrapper h1{
+    font-size:36px ;
+    text-align: center;
+}
+
+.wrapper .inputbox{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0px;
+    position: relative;
+}
+
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius:40px ;
+    border: 2px solid grey;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: whitesmoke;
+    font-size: 16px;
+}
+
+.inputbox input::placeholder{
+    color: whitesmoke;
+}
+
+.inputbox i{
+    position: absolute;
+    top: 35%;
+    right: 20px;
+    font-size: 14px;
+}
+
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    font-size: 14.5px;
+}
+
+.remember-forgot a{
+    color: white;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+button{
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline:none;
+    border-radius:35px ;
+    cursor: pointer;
+    color: black;
+    font-weight: 600;
+}
+
+.wrapper .register{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14.5px;
+}
+
+.wrapper .register p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding-left: 4px;
+    margin: 15px 0px;
+}
+
+.wrapper .register p a:hover{
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 767px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 600px;
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/479/101/113/germany-saxony-gorlitz-hall-historical-literature-wallpaper-preview.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .wrapper {
+        width: 60%; /* Adjust width to occupy almost the full width of the screen */
+        margin-top: 150px;
+    }
+    .wrapper h1 {
+        font-size: 28px; /* Decrease font size for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 514px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 600px;
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/479/101/113/germany-saxony-gorlitz-hall-historical-literature-wallpaper-preview.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .wrapper {
+        width: 85%; /* Adjust width to occupy almost the full width of the screen */
+        margin-top: 150px;
+    }
+    .wrapper h1 {
+        font-size: 28px; /* Decrease font size for smaller screens */
+    }
+}

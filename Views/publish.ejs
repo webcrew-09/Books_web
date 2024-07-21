@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booksphere</title>
+    <link rel="stylesheet" href="publish.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image profile image">
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"
+              alt=""
+            />
+          </span>
+
+          <div class="text logo-text">
+            <span class="name">Username</span>
+          </div>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Search..." />
+          </li>
+
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="index">
+                <i class="bx bxs-home icon"></i>
+                <span class="text nav-text">Home</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="publish">
+                <i class="bx bxs-cloud-upload icon"></i>
+                <span class="text nav-text">Publish</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="about">
+                <i class="bx bxs-info-circle icon"></i>
+                <span class="text nav-text">About</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bxs-contact icon"></i>
+                <span class="text nav-text">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Publish Your Book</h1>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title">Book Title:</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div class="form-group">
+          <label for="author">Author Name:</label>
+          <input type="text" id="author" name="author" required />
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="pdf">Book PDF:</label>
+          <input type="file" id="pdf" name="pdf" accept=".pdf" required />
+        </div>
+        <button id="Publish">Publish</button>
+      </form>
+    </div>
+
+    <script>
+          const publishBtn = document.querySelector("#Publish");
+          publishBtn.addEventListener("click", () => {
+          console.log("clicked!");
+          const BookTitle = document.querySelector("#title").value;
+          const BookAuthor = document.querySelector("#author").value;
+          const BookDesc = document.querySelector("#description").value;
+
+          if (!BookTitle || !BookAuthor || !BookDesc) {
+            alert("One or more fields cannot be empty.");
+            return; // Exit the function early
+          }
+
+          fetch("/Publish", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ BookTitle, BookAuthor, BookDesc }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert(data.message); // Display success message
+              // Optionally, redirect to the login page or perform other actions
+            } else {
+              alert(data.message); // Display error message
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred'); // Display generic error message
+          });
+
+          document.querySelector("#title").value = "";
+          document.querySelector("#author").value = "";
+          document.querySelector("#description").value = "";
+        });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const body = document.querySelector("body");
+        const sidebar = body.querySelector("nav");
+        const toggle = body.querySelector(".toggle");
+        const modeSwitch = body.querySelector(".toggle-switch");
+        const modeText = body.querySelector(".mode-text");
+
+        toggle.addEventListener("click", () => {
+          sidebar.classList.toggle("close");
+        });
+
+        modeSwitch.addEventListener("click", () => {
+          body.classList.toggle("dark");
+
+          if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+          } else {
+            modeText.innerText = "Dark mode";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
